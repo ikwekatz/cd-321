@@ -11,14 +11,14 @@
     <?php
 define('ROOT',__DIR__);
     define ('cssP', "/php/project/bootstrap/css/" );
-    define ('page', "localhost/php/project/pages/");
+    define ('page', "/php/project/pages/");
     define ('page1', "localhost/php/project/pages/private/session.php");
     define('includes', "/php/project/includes/");
     define('Image', '/php/project/img/');
     define('index', '/php/project/index.php');
     define('jssrc', '/php/project/bootstrap/js/');
-    include('localhost/php/project/pages/private/session.php');
-    confirm_logged_in();
+    #include('localhost/php/project/pages/private/session.php');
+    #confirm_logged_in();
 ?>
     <link rel="stylesheet" type="text/css" href="<?php echo cssP ;?>main.css">
     <link rel="stylesheet" type="text/css" href="<?php echo cssP  ;?>bootstrap.min.css">
