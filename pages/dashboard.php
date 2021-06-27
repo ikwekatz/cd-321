@@ -17,7 +17,7 @@
       define('Image', '/php/project/img/');
       define('index', '/php/project/index.php');
       define('jssrc', '/php/project/bootstrap/js/');
-      include('../../includes/session.php');
+      include('../includes/session.php');
       confirm_logged_in();
   ?>
     <link rel="stylesheet" type="text/css" href="<?php echo cssP ;?>main.css">
@@ -177,7 +177,7 @@
             Subscribe
         </button>
         <button type="submit" class="btn btn-secondary mb-4">
-            <a href="<?php echo page;?>public/logout.php">Logout</a>
+            <a href="<?php echo page;?>logout.php">Logout</a>
         </button>
     </div>
     <!--Grid column-->
@@ -188,6 +188,6 @@
 </div>
 <!--End of card body div-->
 <?php
-include '../../includes/footer.php';
+include '../includes/footer.php';
 ?>
 </body>

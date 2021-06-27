@@ -1,5 +1,5 @@
 <?php
-@include('../../includes/header.php');
+@include('../includes/header.php');
 ?>
 
 <body>
@@ -8,7 +8,7 @@
             <h3>Registration Form</h3>
         </div>
         <div class="card-body">
-            <form class="needs-validation" name="rform" method="POST" action="<?php echo page;?>private/reg_process.php"
+            <form class="needs-validation" name="rform" method="POST" action="<?php echo page;?>reg_process.php"
                 novalidate>
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
@@ -393,7 +393,7 @@
         </div>
     </div>
     <?php 
-include('../../includes/footer.php');
+include('../includes/footer.php');
 ?>
     <script>
     document.querySelector('.custom-file-input').addEventListener('change', function(e) {

@@ -17,9 +17,9 @@
 	function confirm_logged_in() {
 		if (!logged_in()) {
 ?>
-			<script type="text/javascript">
-				window.location = "<?php echo page;?>public/login.php";
-			</script>
+<script type="text/javascript">
+window.location = "<?php echo page;?>login.php";
+</script>
 <?php
 		}
 	}

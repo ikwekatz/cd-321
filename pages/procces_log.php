@@ -1,6 +1,6 @@
 <?php
-include('../../includes/connection.php');
-include('../../includes/session.php');
+include('../includes/connection.php');
+include('../includes/session.php');
 function test_input($data) {
      
     $data = trim($data);

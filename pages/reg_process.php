@@ -1,5 +1,5 @@
 <?php
-include('../../includes/connection.php');
+include('../includes/connection.php');
 if (isset($_POST['register'])) {
 $errorep="";
 $fname=trim($_POST['fname']);
@@ -45,11 +45,11 @@ if ($stmt->execute()){
 
                             $conn->rollback();
                             echo $errorep;
-                             echo "<script>alert('Registration Fails');window.location.href='../public/register.php';</script>";
+                             echo "<script>alert('Registration Fails');window.location.href='register.php';</script>";
 
                         } else {
                             $conn->commit();
-                             echo "<script>alert('Thank you for register click ok to login');window.location.href='../public/login.php';</script>";
+                             echo "<script>alert('Thank you for register click ok to login');window.location.href='login.php';</script>";
                         }
 
 }

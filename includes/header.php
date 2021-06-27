@@ -147,8 +147,8 @@ if(isset($_POST['email'])){
                         </div>
                         <div class="text text-white">
                             <div class="text text-white">
-                                <a class="text text-white" href="<?php echo page; ?>public/login.php">Login</a> |
-                                <a class="text text-white" href="<?php echo page; ?>public/register.php"> Register</a>
+                                <a class="text text-white" href="<?php echo page; ?>login.php">Login</a> |
+                                <a class="text text-white" href="<?php echo page; ?>register.php"> Register</a>
                             </div>
                         </div>
                     </div>
