@@ -94,10 +94,8 @@
                             <div class="col">
                                 <p class="col-sm-6">
                                 <h3>Welcome <?php echo $_SESSION['fname'].' '.$_SESSION['lname']; ?></h3>
-                                </p>
-                            </div>
-                            <div class="col">
 
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -177,6 +175,9 @@
         <!-- Submit button -->
         <button type="submit" class="btn btn-secondary mb-4">
             Subscribe
+        </button>
+        <button type="submit" class="btn btn-secondary mb-4">
+            <a href="<?php echo page;?>public/logout.php">Logout</a>
         </button>
     </div>
     <!--Grid column-->
