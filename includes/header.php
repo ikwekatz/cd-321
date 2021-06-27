@@ -21,8 +21,8 @@ define('ROOT',__DIR__);
     <link rel="stylesheet" type="text/css" href="<?php echo cssP ;?>main.css">
     <link rel="stylesheet" type="text/css" href="<?php echo cssP  ;?>bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<<?php echo cssP;?>fontawesome-all.min.css">
-      <link rel="stylesheet" type="text/css" href="<<?php echo cssP;?>Profile-Edit-Form-1.css">
-      <link rel="stylesheet" type="text/css" href="<<?php echo cssP;?>Profile-Edit-Form.css">
+    <link rel="stylesheet" type="text/css" href="<<?php echo cssP;?>Profile-Edit-Form-1.css">
+    <link rel="stylesheet" type="text/css" href="<<?php echo cssP;?>Profile-Edit-Form.css">
     <link rel="icon" href="<?php echo Image;?>favico.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -31,7 +31,7 @@ define('ROOT',__DIR__);
     <script type="text/javascript" src="<?php echo jssrc;?>main.js"></script>
     <script type="text/javascript" src="<?php echo jssrc;?>jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo jssrc;?>bootstrap.min.js"></script>
-      <script type="text/javascript" src="<?php echo jssrc;?>Profile-Edit-Form.js"></script>
+    <script type="text/javascript" src="<?php echo jssrc;?>Profile-Edit-Form.js"></script>
     <!-- custom javascript -->
 
     <script type="text/javascript">
@@ -78,41 +78,43 @@ define('ROOT',__DIR__);
             <?php
 if(isset($_POST['email'])){
 ?>
-<section class="header-main border-bottom col-12 bg-primary">
-    <div class="row align-items-center">
-        <div class="col-lg-2 col-2">
-            <a href="<?php echo $pth;?>" class="brand-wrap">
-                <img class="logo " width="100px" src="<?php echo Image.'favico.png';?>">
-            </a> <!-- brand-wrap.// -->
-        </div>
-        <div class="col-lg-9 col-9 col-sm-10 row">
-            <div class="container-fluid col-8">
-                <div class="card1">
-                    <div class=" text-white">
-                        <h1>Online Job Application System</h1>
+            <section class="header-main border-bottom col-12 bg-primary">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 col-2">
+                        <a href="<?php echo $pth;?>" class="brand-wrap">
+                            <img class="logo " width="100px" src="<?php echo Image.'favico.png';?>">
+                        </a> <!-- brand-wrap.// -->
                     </div>
-                </div>
-                <!--End of Nav div-->
-            </div> <!-- col.// -->
-            <div class="col-lg-3 col-sm-3 col-3">
-                <div class="widgets-wrap float-lg-right">
-                    <div class="widget-header icontext">
-                        <div align="center">
-                            <a href="#" class="icon text-white icon-lg rounded-circle border"> <i
-                                    class=" fa fa-user"></i></a>
-                        </div>
-                        <div class="text text-white">
-                            <div class="text text-white">
-                                <p class="col-sm-6"><h3>Welcome <?php echo $_SESSION['fname'].' '.$_SESSION['lname']; ?></h3></p>
-
+                    <div class="col-lg-9 col-9 col-sm-10 row">
+                        <div class="container-fluid col-8">
+                            <div class="card1">
+                                <div class=" text-white">
+                                    <h1>Online Job Application System</h1>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div> <!-- widgets-wrap.// -->
-            </div> <!-- col.// -->
-        </div> <!-- row.// -->
-    </div> <!-- container.// -->
-</section>
+                            <!--End of Nav div-->
+                        </div> <!-- col.// -->
+                        <div class="col-lg-3 col-sm-3 col-3">
+                            <div class="widgets-wrap float-lg-right">
+                                <div class="widget-header icontext">
+                                    <div align="center">
+                                        <a href="#" class="icon text-white icon-lg rounded-circle border"> <i
+                                                class=" fa fa-user"></i></a>
+                                    </div>
+                                    <div class="text text-white">
+                                        <div class="text text-white">
+                                            <p class="col-sm-6">
+                                            <h3>Welcome <?php echo $_SESSION['fname'].' '.$_SESSION['lname']; ?></h3>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- widgets-wrap.// -->
+                        </div> <!-- col.// -->
+                    </div> <!-- row.// -->
+                </div> <!-- container.// -->
+            </section>
 </div> <!-- container //  -->
 </nav> <!-- header-top-light.// -->
 <?php
