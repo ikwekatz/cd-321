@@ -1,137 +1,179 @@
-.container {
-    width: 80%;
-    margin: auto;
-}
-
-a {
-    text-decoration: none;
-}
-body{
-  background-color: #adadad;
-}
-
-.clr {
-    clear: both;
-}
-.box-1 {
-    padding: 5px 20px;
-    text-align: center;
-}
-
-.box-2 {
-    border: 5px dotted #ccc;
-    padding: 5px 20px;
-    margin: 20px 0;
-}
-
-.categories {
-    padding: 15px;
-    display: inline-flex;
-    color: white;
-    list-style-type: none;
-    text-align: center;
-    text-decoration: none;
-}
-
-.my-form {
-    padding: 20px;
-    width: 40%;
-}
-
-.my-form .form-group {
-    padding: 15px;
-}
-
-.my-form label {
-    display: block;
-}
-
-.my-form input[type="text"] {
-    padding: 8px;
-    width: 100%;
-}
-
-.my-form input[type="email"] {
-    padding: 8px;
-    width: 100%;
-}
-
-.my-form input[type="password"] {
-    padding: 8px;
-    width: 100%;
-}
-
-.my-form input[type="submit"] {
-    padding: 10px 15px;
-}
-.btn_c{
-  margin: 20px,50px;
-}
-
-.button {
-    margin-left: 18px;
-    padding: 8px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-}
-
-.button:hover {
-    background-color: red;
-    color: #fff;
-}
-
-.button:active {
-    background-color: green;
-    color: #fff;
-}
-
-.block {
-    width: 420px;
-    float: left;
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-sizing: border-box;
-    margin-top: -16px;
-}
-
-#main-block {
-    width: 70%;
-    float: left;
-    padding: 15px;
-    box-sizing: border-box;
-}
-
-#side-bar {
-    width: 30%;
-    float: right;
-    padding: 15px;
-    color: #fff;
-    box-sizing: border-box;
-}
-.gendec{
-    margin-left:  10px 20px;
-}
-
-.centbox{
-  margin: auto;
-}
-.p-box {
-    width: 800px;
-    height: 400px;
-    position: relative;
-    margin-top: 30px;
-    border: 2px solid black;
-}
-
-.p-box h2 {
-    position: absolute;
-    top: 10px;
-    left: 600px;
-}
-
-.p-box h3 {
-    position: absolute;
-    bottom: 10px;
-    right: 600px;
-}
+    .container {
+        width: 80%;
+        margin: auto;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    body {
+        background-color: #adadad;
+    }
+    
+    .home-newsletter {
+        padding: 10px 0;
+    }
+    
+    .home-newsletter .single {
+        max-width: 650px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .home-newsletter .single h2 {
+        font-size: 22px;
+        color: white;
+        text-transform: uppercase;
+        margin-bottom: 0px;
+    }
+    
+    .home-newsletter .single .form-control {
+        height: 50px;
+        background: rgba(255, 255, 255, 0.6);
+        border-color: transparent;
+        border-radius: 20px 0 0 20px;
+    }
+    
+    .home-newsletter .single .form-control:focus {
+        box-shadow: none;
+        border-color: #243c4f;
+    }
+    
+    .home-newsletter .single .btn {
+        min-height: 50px;
+        border-radius: 0 20px 20px 0;
+        color: #fff;
+    }
+    
+    .clr {
+        clear: both;
+    }
+    
+    .box-1 {
+        padding: 5px 20px;
+        text-align: center;
+    }
+    
+    .box-2 {
+        border: 5px dotted #ccc;
+        padding: 5px 20px;
+        margin: 20px 0;
+    }
+    
+    .categories {
+        padding: 15px;
+        display: inline-flex;
+        color: white;
+        list-style-type: none;
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    .my-form {
+        padding: 20px;
+        width: 40%;
+    }
+    
+    .my-form .form-group {
+        padding: 15px;
+    }
+    
+    .my-form label {
+        display: block;
+    }
+    
+    .my-form input[type="text"] {
+        padding: 8px;
+        width: 100%;
+    }
+    
+    .my-form input[type="email"] {
+        padding: 8px;
+        width: 100%;
+    }
+    
+    .my-form input[type="password"] {
+        padding: 8px;
+        width: 100%;
+    }
+    
+    .my-form input[type="submit"] {
+        padding: 10px 15px;
+    }
+    
+    .btn_c {
+        margin: 20px, 50px;
+    }
+    
+    .button {
+        margin-left: 18px;
+        padding: 8px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+    }
+    
+    .button:hover {
+        background-color: red;
+        color: #fff;
+    }
+    
+    .button:active {
+        background-color: green;
+        color: #fff;
+    }
+    
+    .block {
+        width: 420px;
+        float: left;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-sizing: border-box;
+        margin-top: -16px;
+    }
+    
+    #main-block {
+        width: 70%;
+        float: left;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+    
+    #side-bar {
+        width: 30%;
+        float: right;
+        padding: 15px;
+        color: #fff;
+        box-sizing: border-box;
+    }
+    
+    .gendec {
+        margin-left: 10px 20px;
+    }
+    
+    .centbox {
+        margin: auto;
+    }
+    
+    .p-box {
+        width: 800px;
+        height: 400px;
+        position: relative;
+        margin-top: 30px;
+        border: 2px solid black;
+    }
+    
+    .p-box h2 {
+        position: absolute;
+        top: 10px;
+        left: 600px;
+    }
+    
+    .p-box h3 {
+        position: absolute;
+        bottom: 10px;
+        right: 600px;
+    }

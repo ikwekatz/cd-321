@@ -8,8 +8,8 @@
             <h3>Registration Form</h3>
         </div>
         <div class="card-body">
-            <form class="needs-validation" name="rform" method="POST" action="<?php echo page;?>reg_process.php"
-                novalidate>
+            <form class="needs-validation" enctype="multipart/form-data" name="rform" method="POST"
+                action="<?php echo page;?>reg_process.php" novalidate>
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
                         <label for="validationCustom01">First name</label>

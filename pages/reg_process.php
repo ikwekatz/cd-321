@@ -10,10 +10,12 @@ $phone=trim($_POST['phone']);
 $gender=trim($_POST['gender']);
 $dob=trim($_POST['dob']);
 $country=trim($_POST['country']);
-$fileID=trim($_POST['fileID']);
+$fileID=trim($_FILES['fileID']['name']);
+$image = $_FILES['fileID']['tmp_name'];
+$fins = addslashes(file_get_contents($image));
 $skills=trim(implode( ',',$_POST['skills']));
 $sql1=$conn->prepare("INSERT INTO login(email, pwd) values ('".$email."','".$pwd."')");
-$sql3=$conn->prepare("INSERT INTO user(fname, lname, email, gender, dob, file, phone, country) values ('".$fname."','".$lname."','".$email."','".$gender."','".$dob."','".$fileID."','".$phone."','".$country."')");
+$sql3=$conn->prepare("INSERT INTO user(fname, lname, email, gender, dob, file, phone, country) values ('".$fname."','".$lname."','".$email."','".$gender."','".$dob."','".$fins."','".$phone."','".$country."')");
 $sql4=$conn->prepare("INSERT INTO app_type(email, skills) VALUES ('".$email."','".$skills."')");
 $sql5=$conn->prepare("INSERT INTO user_type(email) VALUES ('".$email."')");
 $stmt=$conn->prepare("SELECT email FROM user where email='" . $email . "'");
@@ -45,11 +47,11 @@ if ($stmt->execute()){
 
                             $conn->rollback();
                             echo $errorep;
-                             echo "<script>alert('Registration Fails');window.location.href='register.php';</script>";
+                             #echo "<script>alert('Registration Fails');window.location.href='register.php';</script>";
 
                         } else {
                             $conn->commit();
-                             echo "<script>alert('Thank you for register click ok to login');window.location.href='login.php';</script>";
+                             #echo "<script>alert('Thank you for register click ok to login');window.location.href='login.php';</script>";
                         }
 
 }

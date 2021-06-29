@@ -16,13 +16,15 @@ define('ROOT',__DIR__);
     define('Image', '/php/project/img/');
     define('index', '/php/project/index.php');
     define('jssrc', '/php/project/bootstrap/js/');
+    @include('../includes/connection.php');
+    @include('../includes/session.php');
 
 ?>
-    <link rel="stylesheet" type="text/css" href="<?php echo cssP ;?>main.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo cssP  ;?>bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<<?php echo cssP;?>fontawesome-all.min.css">
-    <link rel="stylesheet" type="text/css" href="<<?php echo cssP;?>Profile-Edit-Form-1.css">
-    <link rel="stylesheet" type="text/css" href="<<?php echo cssP;?>Profile-Edit-Form.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo cssP;?>main.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo cssP;?>bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo cssP;?>fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo cssP;?>Profile-Edit-Form-1.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo cssP;?>Profile-Edit-Form.css">
     <link rel="icon" href="<?php echo Image;?>favico.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -71,94 +73,78 @@ define('ROOT',__DIR__);
     </script>
 
 </head>
-<div>
 
-    <body>
-        <header class="section-header">
-            <?php
-if(isset($_POST['email'])){
-?>
-            <section class="header-main border-bottom col-12 bg-primary">
+<body>
+    <header class="section-header">
+        <section class="header-main border-bottom col-12 bg-primary">
+            <div class="row align-items-center">
+                <?php
+                    if(isset($_SESSION['email'])){
+                ?>
                 <div class="row align-items-center">
-                    <div class="col-lg-2 col-2">
-                        <a href="<?php echo $pth;?>" class="brand-wrap">
-                            <img class="logo " width="100px" src="<?php echo Image.'favico.png';?>">
+                    <div class="col-lg-2 col-0">
+                        <a href="<?php echo page;?>dashboard.php" class="brand-wrap">
+                            <img class="logo " width="150px" src="<?php echo Image.'favico.png';?>">
                         </a> <!-- brand-wrap.// -->
                     </div>
-                    <div class="col-lg-9 col-9 col-sm-10 row">
-                        <div class="container-fluid col-8">
-                            <div class="card1">
-                                <div class=" text-white">
-                                    <h1>Online Job Application System</h1>
-                                </div>
+                    <div class=" row">
+                        <div class="container-fluid">
+                            <div class=" text-white">
+                                <h1>Online Job Application</h1>
                             </div>
-                            <!--End of Nav div-->
-                        </div> <!-- col.// -->
-                        <div class="col-lg-3 col-sm-3 col-3">
-                            <div class="widgets-wrap float-lg-right">
-                                <div class="widget-header icontext">
-                                    <div align="center">
-                                        <a href="#" class="icon text-white icon-lg rounded-circle border"> <i
-                                                class=" fa fa-user"></i></a>
-                                    </div>
-                                    <div class="text text-white">
-                                        <div class="text text-white">
-                                            <p class="col-sm-6">
-                                            <h3>Welcome <?php echo $_SESSION['fname'].' '.$_SESSION['lname']; ?></h3>
-                                            </p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <!-- widgets-wrap.// -->
-                        </div> <!-- col.// -->
-                    </div> <!-- row.// -->
-                </div> <!-- container.// -->
-            </section>
-</div> <!-- container //  -->
-</nav> <!-- header-top-light.// -->
-<?php
-}else{
-
-}
-?>
-<section class="header-main border-bottom col-12 bg-primary">
-    <div class="row align-items-center">
-        <div class="col-lg-2 col-2">
-            <a href="<?php echo $pth;?>" class="brand-wrap">
-                <img class="logo " width="100px" src="<?php echo Image.'favico.png';?>">
-            </a> <!-- brand-wrap.// -->
-        </div>
-        <div class="col-lg-9 col-9 col-sm-10 row">
-            <div class="container-fluid col-8">
-                <div class="card1">
-                    <div class=" text-white">
-                        <h1>Online Job Application System</h1>
+                        </div>
+                    </div>
+                    <div class="widget-header icontext">
+                        <div class="text text-white">
+                            <div class="col-sm-12 col-md-12">
+                                <p>
+                                <h3>Welcome <?php echo $_SESSION['fname'].' '.$_SESSION['lname']; ?></h3>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!--End of Nav div-->
-            </div> <!-- col.// -->
-            <div class="col-lg-3 col-sm-3 col-3">
-                <div class="widgets-wrap float-lg-right">
-                    <div class="widget-header icontext">
-                        <div align="center">
-                            <a href="#" class="icon text-white icon-lg rounded-circle border"> <i
-                                    class=" fa fa-user"></i></a>
-                        </div>
-                        <div class="text text-white">
-                            <div class="text text-white">
-                                <a class="text text-white" href="<?php echo page; ?>login.php">Login</a> |
-                                <a class="text text-white" href="<?php echo page; ?>register.php"> Register</a>
+        </section>
+        <?php
+}else{
+    ?>
+        <section class="header-main border-bottom col-12 bg-primary">
+            <div class="row align-items-center">
+                <div class="col-lg-2 col-2">
+                    <a href="<?php echo $pth; ?>" class="brand-wrap">
+                        <img class="logo " width="100px" src="<?php echo Image.'favico.png'; ?>">
+                    </a> <!-- brand-wrap.// -->
+                </div>
+                <div class="col-lg-9 col-9 col-sm-10 row">
+                    <div class="container-fluid col-8">
+                        <div class="card1">
+                            <div class=" text-white">
+                                <h1>Online Job Application System</h1>
                             </div>
                         </div>
-                    </div>
-                </div> <!-- widgets-wrap.// -->
-            </div> <!-- col.// -->
-        </div> <!-- row.// -->
-    </div> <!-- container.// -->
-</section> <!-- header-main .// -->
-</header> <!-- section-header.// -->
-</header> <!-- section-header.// -->
-
-</body>
-</div>
+                        <!--End of Nav div-->
+                    </div> <!-- col.// -->
+                    <div class="col-lg-3 col-sm-3 col-3">
+                        <div class="widgets-wrap float-lg-right">
+                            <div class="widget-header icontext">
+                                <div>
+                                    <a href="#" class="icon text-white icon-lg rounded-circle border"> <i
+                                            class=" fa fa-user"></i></a>
+                                </div>
+                                <div class="text text-white">
+                                    <div class="text text-white">
+                                        <a class="text text-white" href="<?php echo page; ?>login.php">Login</a> |
+                                        <a class="text text-white" href="<?php echo page; ?>register.php"> Register</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- widgets-wrap.// -->
+                    </div> <!-- col.// -->
+                </div> <!-- row.// -->
+            </div> <!-- container.// -->
+            <?php
+    }
+    ?>
+            </div>
+        </section> <!-- header-main .// -->
+    </header> <!-- section-header.// -->

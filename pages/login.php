@@ -28,7 +28,7 @@ include('../includes/header.php');
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroupPrepend">&#128274</span>
                             </div>
-                            <input type="password" class="form-control" id="validationCustomUsername"
+                            <input type="password" class="form-control" id="validationPassword"
                                 placeholder="Password....." name="pwd" aria-describedby="inputGroupPrepend" required>
                             <div class="invalid-feedback">
                                 Please Enter Password......

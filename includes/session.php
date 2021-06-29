@@ -23,5 +23,4 @@ window.location = "<?php echo page;?>login.php";
 <?php
 		}
 	}
-	confirm_logged_in();
 ?>
