@@ -28,10 +28,10 @@
                 <div class="form-row">
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group"><label>Firstname </label><input class="form-control"
-                                value="<?php echo $_SESSION['fname']; ?>" type="text" name="firstname"></div>
+                                value="<?php echo $_SESSION['fname']; ?>" type="text" name="firstname" disabled></div>
                     </div>
                     <div class="col-sm-12 col-md-6">
-                        <div class="form-group"><label>Lastname </label><input class="form-control"
+                        <div class="form-group"><label>Lastname </label><input disabled class="form-control"
                                 value="<?php echo $_SESSION['lname']; ?>" type="text" name="lastname"></div>
                     </div>
                 </div>

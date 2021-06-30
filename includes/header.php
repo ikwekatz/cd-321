@@ -6,7 +6,7 @@
     <meta http-equiv="cache-control" content="max-age=604800" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Website title - bootstrap html template</title>
+    <title>OJAS | Home</title>
     <?php
 define('ROOT',__DIR__);
     define ('cssP', "/php/project/bootstrap/css/" );

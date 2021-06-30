@@ -17,16 +17,15 @@ if (isset($_POST['apply'])) {
     $apldate=date("Y-m-d");
     $sel="Select jobid from jobs where jobName='".$job."'";
     $sel=$conn->prepare("Select jobid from jobs where jobName='".$job."'");
-    $sqld="INSERT INTO `applicants`( email, jobid, formiv, formvi, unicert, other, appl_date, jobType) VALUES ('".$email."','".$jobid."','".$formiv."','".$formvi."','".$unicert."','".$other."','".$apldate."','".$job."')";
-    $q=$conn->prepare($sqld);
+    $qery=$conn->prepare("INSERT INTO applicants ( email, jobid, formiv, formvi, unicert, other, appl_date, jobType) VALUES ('".$email."','".$jobid."','".$formiv."','".$formvi."','".$unicert."','".$other."','".$apldate."','".$job."')");
     if ($sel->execute()) {
         $user=$sel->fetch(PDO::FETCH_ASSOC);
         if ($sel->rowCount() == 1) {
-            $jobid=$user['jobid'];
+           $jobid=$user['jobid'];
         } else {
             $error="No job post advertised";
         }
-        if (!$q->execute()) {
+        if (!$qery->execute()) {
             $error="Fail to apply Job";
         }
         if (strcmp($errorep, "") > 0) {
