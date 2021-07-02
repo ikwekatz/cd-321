@@ -1,0 +1,67 @@
+<?php
+include('../../includes/connection.php');
+if (isset($_POST['save'])) {
+$errorep="";
+$fname=trim($_POST['fname']);
+$lname=trim($_POST['lname']);
+$email=trim($_POST['email']);
+$pwd=trim(md5($_POST['lname']));
+$phone=trim($_POST['phone']);
+$gender=trim($_POST['gender']);
+$user=trim($_POST['user']);
+$dob=trim($_POST['dob']);
+$country=trim($_POST['country']);
+$fileID=trim($_FILES['fileID']['name']);
+$image = $_FILES['fileID']['tmp_name'];
+$fins = addslashes(file_get_contents($image));
+$skills=trim(implode( ',',$_POST['skills']));
+$sql1=$conn->prepare("INSERT INTO login(email, pwd) values ('".$email."','".$pwd."')");
+$sql3=$conn->prepare("INSERT INTO user(fname, lname, email, gender, dob, file, phone, country) values ('".$fname."','".$lname."','".$email."','".$gender."','".$dob."','".$fins."','".$phone."','".$country."')");
+$sql4=$conn->prepare("INSERT INTO app_type(email, skills) VALUES ('".$email."','".$skills."')");
+$sql6=$conn->prepare("INSERT INTO login_st ( email) VALUES ('".$email."')");
+$sql5=$conn->prepare("INSERT INTO user_type(email,usertype) VALUES ('".$email."','".$user."')");
+$stmt=$conn->prepare("SELECT email FROM user where email='" . $email . "'");
+if ($stmt->execute()){
+                      $user=$stmt->fetch(PDO::FETCH_ASSOC);
+                        if($stmt->rowCount() == 1){
+                        $errorep = "user already exit in database";
+
+                    }else {
+                      $conn->beginTransaction(); # start transaction to insert in multiple tables if no error occurs
+                        #insertion
+
+                        if (!$sql3->execute()) {
+                            #error
+                            $errorep = "Fail to Add User";
+                        }
+                        if (!$sql1->execute()) {
+                            #error
+                            $errorep = "Error on user Details";
+                        }
+                        if(!$sql4->execute()){
+                          $errorep = "Error on inserting Skills ";
+                        }
+                         if (!$sql6->execute()) {
+                            #error
+                            $errorep = "Error on user Details";
+
+                        }
+                        if(!$sql5->execute()){
+                          $errorep = "Error on Inserting user type ";
+                        }
+                        if (strcmp($errorep, "") > 0) {
+                            $conn->rollback();
+                            echo $errorep;
+                            echo "<script>alert('Faile to add User');window.location.href='user.php';</script>";
+
+                        } else {
+                            $conn->commit();
+                             echo "<script>alert('User Successfull added');window.location.href='user.php';</script>";
+                        }
+
+}
+
+
+}
+}
+?>

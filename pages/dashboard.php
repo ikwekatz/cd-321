@@ -67,9 +67,6 @@
             </div>
         </form>
     </section>
-    <div class="col-sm-10 mx-auto my-auto text-right">
-        <a href="<?php echo page;?>logout.php"><span class="btn btn-primary">Logout</span></a>
-    </div>
     </div>
     <hr>
     <!--End of card body div-->

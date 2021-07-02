@@ -75,7 +75,7 @@ define('ROOT',__DIR__);
 </head>
 
 <body>
-    <header class="section-header">
+    <header class="section-header d-flex flex-column">
         <section class="header-main border-bottom col-12 bg-primary">
             <div class="row align-items-center">
                 <?php
@@ -88,20 +88,17 @@ define('ROOT',__DIR__);
                         </a> <!-- brand-wrap.// -->
                     </div>
                     <div class=" row">
-                        <div class="container-fluid">
-                            <div class=" text-white">
-                                <h1>Online Job Application</h1>
-                            </div>
+                        <div class="col-lg-auto col-0 text-white">
+                            <h2>Online Job Application</h2>
                         </div>
-                    </div>
-                    <div class="widget-header icontext">
                         <div class="text text-white">
-                            <div class="col-sm-12 col-md-12">
-                                <p>
-                                <h3>Welcome <?php echo $_SESSION['fname'].' '.$_SESSION['lname']; ?></h3>
-                                </p>
+                            <div class="col-lg-auto">
+                                <h2>Welcome <?php echo $_SESSION['fname'].' '.$_SESSION['lname']; ?></h2>
                             </div>
                         </div>
+                        <div class="col-lg-auto  ml-auto">
+                                <a class="text text-white" href="<?php echo page; ?>logout.php"><h2>Logout</h2></a>
+                            </div>
                     </div>
                 </div>
         </section>
@@ -111,7 +108,7 @@ define('ROOT',__DIR__);
         <section class="header-main border-bottom col-12 bg-primary">
             <div class="row align-items-center">
                 <div class="col-lg-2 col-2">
-                    <a href="<?php echo $pth; ?>" class="brand-wrap">
+                    <a href="<?php echo index; ?>" class="brand-wrap">
                         <img class="logo " width="100px" src="<?php echo Image.'favico.png'; ?>">
                     </a> <!-- brand-wrap.// -->
                 </div>

@@ -18,6 +18,7 @@ $sql1=$conn->prepare("INSERT INTO login(email, pwd) values ('".$email."','".$pwd
 $sql3=$conn->prepare("INSERT INTO user(fname, lname, email, gender, dob, file, phone, country) values ('".$fname."','".$lname."','".$email."','".$gender."','".$dob."','".$fins."','".$phone."','".$country."')");
 $sql4=$conn->prepare("INSERT INTO app_type(email, skills) VALUES ('".$email."','".$skills."')");
 $sql5=$conn->prepare("INSERT INTO user_type(email) VALUES ('".$email."')");
+$sql6=$conn->prepare("INSERT INTO login_st ( email) VALUES ('".$email."')");
 $stmt=$conn->prepare("SELECT email FROM user where email='" . $email . "'");
 if ($stmt->execute()){
                       $user=$stmt->fetch(PDO::FETCH_ASSOC);
@@ -40,18 +41,22 @@ if ($stmt->execute()){
                         if(!$sql4->execute()){
                           $errorep = "Error on inserting Skills ";
                         }
+                         if (!$sql6->execute()) {
+                            #error
+                            $errorep = "Error on user Details";
+
+                        }
                         if(!$sql5->execute()){
                           $errorep = "Error on Inserting user type ";
                         }
                         if (strcmp($errorep, "") > 0) {
-
                             $conn->rollback();
                             echo $errorep;
-                             #echo "<script>alert('Registration Fails');window.location.href='register.php';</script>";
+                            echo "<script>alert('Registration Fails');window.location.href='register.php';</script>";
 
                         } else {
                             $conn->commit();
-                             #echo "<script>alert('Thank you for register click ok to login');window.location.href='login.php';</script>";
+                             echo "<script>alert('Thank you for register click ok to login');window.location.href='login.php';</script>";
                         }
 
 }
